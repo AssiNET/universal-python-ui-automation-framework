@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+	#div1, #div2 {
+	  float: left;
+	  width: 120px;
+	  height: 50px;
+	  margin: 10px;
+	  padding: 10px;
+	  border: 1px solid black;
+	}
+</style>
+<body>
+
+<div class="w3-container">
+  <h2>W3.CSS Login Modal</h2>
+
+  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-green w3-large">Login</button>
+  <div id="id01" class="w3-modal" style="display:block">
+    <div class="w3-modal-content w3-card-4" style="display=block">
+    
+
+	<div class="w3-left" style="padding-top:10px">
+		<button onClick="window.location.reload(true)" class="w3-display-center w3-button w3-red w3-xlarge">Reload page</button>
+	</div>
+	
+    <div class="w3-center" style="margin-right:200px;font-size:32px; padding-top:10px">Stopwatch</div>
+	
+	<div style="border-style: solid; width:250px; margin-left:325px; padding:5px" class="w3-center">
+        <div style="font-size:26px">Time: <span id="time">0</span> seconds</div>
+		<span style="display:inline-block"><input type="button" id="startTimer" value="Start" onclick="start();"><br/></span>
+		<span style="display:inline-block"><input type="button" id="stopTimer" value="Stop"  onclick="stop();"><br/></span>
+		<span style="display:inline-block"><input type="button" id="resetTimer" value="Reset"  onclick="reset();"><br/></span>
+    </div>
+	<br/>
+	<div>
+	<div style="display:inline-block; border-style: solid;width:250px; margin-left:180px; padding:5px" class="w3-center">
+		<span style="font-size:18px;">Slider</span>
+		<form  name="myform" oninput="range1value.value = range1.valueAsNumber">
+		  <input name="range1" type="range" step="1" min="0" max="4" value="0">  
+		  <output style="font-size:26px;" name="range1value" for="range1" >0</output>
+		</form>
+	</div>
+	
+	<div style="display:inline-block; border-style: solid;width:400px; height:80px; margin-left:10px; padding:5px; position:absolute">
+		
+		<span style="font-size:18px;margin-top:20px; display: inline-block;">Drag&Drop</span>
+	<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<img src="https://digitalfinancelearning.com/wp-content/uploads/2019/05/digitalfinancelearning-sikuli-768x442.png" draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31">
+	</div>
+	<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+	</div>
+	</div>
+	
+	
+	<div id="button" class="w3-center" style="padding-top:10px">
+		<button class="w3-display-center w3-button w3-blue w3-xlarge">Test Button</button>
+	</div>
+
+	<div id="container"></div>
+    
+      <div class="w3-center"><br>
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">X</span>
+        <img src="https://img.icons8.com/plasticine/200/000000/user.png" alt="Avatar" style="width:20%">
+      </div>
+
+      <form class="w3-container" onsubmit="popup()">
+        <div class="w3-section">
+          <label><b>Username</b></label>
+          <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="usrname" required>
+          <label><b>Password</b></label>
+          <input class="w3-input w3-border" type="text" placeholder="Enter Password" name="psw" required>
+          <button class="w3-button w3-block w3-green w3-section w3-padding">Login</button>
+          <input class="w3-check w3-margin-top" type="checkbox"> Remember me</input>
+		  <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me next time</input>
+		  <input class="w3-check w3-margin-top" type="checkbox" > Remember me later</input>
+        </div>
+      </form>
+
+      <div class="w3-container w3-border-top w3-padding-16 w3-light-grey">
+        <button onclick="document.getElementById('id01').style.display='none'" type="button" class="w3-button w3-red">Cancel</button>
+        <span class="w3-right w3-padding w3-hide-small">Forgot <a href="#">password?</a></span>
+      </div>
+
+    </div>
+  </div>
+</div>
+	<script>
+		var counter = 0
+        var btn = document.getElementById('button');
+        btn.addEventListener('click', function(){
+			counter = counter + 1
+            var container = document.getElementById('container');
+            container.innerHTML = "<div class=\"w3-center\" style=\"text-align:center;font-size:32px\"> Clicked " + counter + "</div>" 
+        });
+		
+		  var timeElapsed = 0;
+            var timerID = -1;
+            function tick() {
+                timeElapsed++
+                document.getElementById("time").innerHTML = timeElapsed;
+            }
+
+            function start() {
+                if(timerID == -1){
+                    timerID = setInterval(tick, 1000);
+                }
+            }
+
+            function stop() {
+                if(timerID != -1){
+                    clearInterval(timerID)
+                    timerID = -1
+                }
+            }
+
+            function reset() {
+                stop();
+                timeElapsed = -1;
+                tick()
+            }
+			
+		
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+			
+function popup() {
+  alert("You successfully Logged in! :)");
+}
+</script>  
+</body>
+</html>
+
+

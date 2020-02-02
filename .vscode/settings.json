@@ -1,0 +1,14 @@
+{
+    "python.pythonPath": "C:\\Python27\\python.exe",
+    "python.linting.pylintEnabled": true,
+    "python.linting.flake8Enabled": false,
+    "python.linting.enabled": true,
+    "editor.mouseWheelZoom": true,
+    "editor.fontSize": 16,
+    "editor.renderWhitespace": "all",
+    "python.autoComplete.extraPaths": [
+        "Tests",
+        "Tests/_lib.sikuli",
+        "Tests/_uimap.sikuli"
+    ],
+}
