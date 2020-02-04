@@ -38,8 +38,8 @@ def CopyResults(destinations):
 # 'python runner.py smoke_tests' - smoke_tests is the 1st Argument sys.argv[1]
 ####################################################################################
 parser = argparse.ArgumentParser()
-parser.add_argument("-set", help="echo the string you use here")
-parser.add_argument("-debug", action="store_true", default=False)
+parser.add_argument("--set", help="echo the string you use here")
+parser.add_argument("--debug", action="store_true", default=False)
 args = parser.parse_args()
 print args
 
