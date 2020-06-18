@@ -1,0 +1,1 @@
+call start ffmpeg.exe -f gdigrab -framerate 15 -i desktop -q:v 5 Video.avi -y

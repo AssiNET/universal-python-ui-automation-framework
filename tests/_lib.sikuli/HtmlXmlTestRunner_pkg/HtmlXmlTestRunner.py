@@ -683,7 +683,7 @@ class _TestResult(TestResult):
                 sys.stderr.write('\t' + value)
             sys.stderr.write('\n')
         except Exception as e:
-            print("Exception: " + e)
+            print("Exception: " + str(e))
 
     def stopTest(self, test):
         # Usually one of addSuccess, addError or addFailure would have been called.

@@ -38,10 +38,10 @@ class SmokeTests(unittest.TestCase):
 if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(SmokeTests)
 
-    # #Use it to add manually test cases - handy when debugging a specific part of the set
-	# suite = unittest.TestSuite() -
-    # suite.addTest(SmokeTests('test_100_Start_Browser'))
-    # suite.addTest(SmokeTests('FREE_SLOT_FOR_THE_NEXT_TEST'))
+    #Use it to add manually test cases - handy when debugging a specific part of the set
+	#suite = unittest.TestSuite() -
+    #suite.addTest(SmokeTests('test_100_Start_Browser'))
+    #suite.addTest(SmokeTests('FREE_SLOT_FOR_THE_NEXT_TEST'))
 
     outfile = open("Report.html", "w")
     runner = HtmlXmlTestRunner.HTMLTestRunner(stream=outfile, title='SmokeTests Report', description="Some descr")

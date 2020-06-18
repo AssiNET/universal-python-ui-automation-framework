@@ -5,10 +5,6 @@ import datetime
 import argparse
 
 
-
-
-
-
 def CreateTimestampResultDir():
     if not DEBUG:
         if not os.path.exists(RESULTS_DIR):
@@ -87,7 +83,7 @@ print(command)
 ####################################################################################
 # RUN TESTS
 ####################################################################################
-os.system("fake cmd") # workaround
+os.system("fake cmd") # workaround for colorization
 os.system(command)
 
 ####################################################################################
@@ -97,22 +93,4 @@ if not DEBUG:
     CopyResults(LATEST_RESULTS_DIR)
     os.system("taskkill /im ffmpeg.exe")
     os.system("taskkill /im Textbox.exe")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

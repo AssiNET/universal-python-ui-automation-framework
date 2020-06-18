@@ -1,0 +1,1 @@
+call runner.py --set smoke_tests
