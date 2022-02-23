@@ -23,7 +23,7 @@ class SmokeTests(unittest.TestCase):
 
         # Run SampleWebpage_for_demos_125dpi.html in CMD which start Chrome Automatically
         sample_web_page_path = os.path.join(os.getcwd(), 'content', 'SampleWebpage_for_demos_125dpi.html')
-        os.system(sample_web_page_path)
+        os.system(sample_web_page_path) # Will Hangs in Jenkins due to waiting the process to finish
         #Browser.Start(r"google.com")
         wait(Browser_UI.button_Refresh, 5)
         Browser.Maximize()
